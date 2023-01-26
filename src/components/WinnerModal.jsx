@@ -4,7 +4,7 @@ export const WinnerModal = ({ winner, resetGame }) => {
 
     if (winner === null) return null;
 
-    const winnerText = winner === false ? 'Empate' : 'Ganó:';
+    const winnerText = winner === false ? 'Empate!!' : 'Ganó:';
 
     return (
         <section className="winner">
@@ -12,9 +12,12 @@ export const WinnerModal = ({ winner, resetGame }) => {
 
                 <h2>{winnerText}</h2>
 
-                <header className="win">
-                    {winner && <Square>{winner}</Square>}
-                </header>
+                {
+                    winner &&
+                    <header className="win">
+                        <Square>{winner}</Square>
+                     </header>
+                }
 
                 <footer>
                     <button onClick={resetGame}>
