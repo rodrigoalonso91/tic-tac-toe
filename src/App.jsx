@@ -1,34 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+const TURNS = {
+    X: 'x',
+    O: 'o'
+}
 
-function App() {
-  const [count, setCount] = useState(0)
+const board = Array(9).fill(null);
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+export const Square = ({children, index, updateBoard}) => {
+
+
+    return (
+        <div className="square" key={index}>
+            {children}
+        </div>
+    )
+}
+
+
+const App = () => {
+
+    return (
+        <main className="board" >
+            <h1>Tic Tac Toe</h1>
+            <section className="game" >
+                {
+                    board.map( (_, index) => {
+                        return (
+                            <Square index={index}  >
+
+                            </Square>
+                        )
+                    })
+                }
+            </section>
+        </main>
+    )
 }
 
 export default App
