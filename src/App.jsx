@@ -5,6 +5,7 @@ import confetti from "canvas-confetti";
 import { WinnerModal } from "./components/WinnerModal";
 import { checkWinner } from "./helpers/checkWinner";
 import { checkIsEndGame } from "./helpers/checkIsEndGame";
+import { GameBoard } from "./components/GameBoard";
 
 const App = () => {
 
@@ -50,15 +51,7 @@ const App = () => {
             </button>
 
             <section className="game" >
-                {
-                    board.map( (board, index) => {
-                        return (
-                            <Square key={index} index={index} updateBoard={updateBoard} >
-                                {board}
-                            </Square>
-                        )
-                    })
-                }
+                <GameBoard board={ board } updateBoard={ updateBoard } />
             </section>
 
             <section className="turn">
