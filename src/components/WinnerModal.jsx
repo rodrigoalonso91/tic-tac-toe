@@ -16,7 +16,7 @@ export const WinnerModal = ({ winner, resetGame }) => {
                     winner &&
                     <header className="win">
                         <Square>{winner}</Square>
-                     </header>
+                    </header>
                 }
 
                 <footer>

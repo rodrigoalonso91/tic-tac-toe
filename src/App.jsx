@@ -1,7 +1,5 @@
-import { useState } from "react"
 import { Square } from "./components/Square";
 import { TURNS } from "./constants";
-import confetti from "canvas-confetti";
 import { WinnerModal } from "./components/WinnerModal";
 import { GameBoard } from "./components/GameBoard";
 import { useBoard } from "./hooks/useBoard";
